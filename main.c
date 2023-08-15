@@ -6,17 +6,17 @@
 
 int main()
 {
+    // Length of array is 6, length of string is 5
     char dest[6] = "Hello";
-    printf("SIZE: %lu\n", sizeof(dest));
-    char bob[3] = "ay";
+    // Length of string to append to first string is also 5
     char src[20] = "World";
+    printf("LEN: %lu\tSIZE: %lu\n", strlen(dest), sizeof(dest));
+
+    // Behavior is undefined when appending a string to another string that is not large enough
     strncat(dest, src, 5);
-    printf("SIZE: %lu\n", sizeof(dest));
+    printf("LEN: %lu\tSIZE: %lu\n", strlen(dest), sizeof(dest));
 
-
-    for (int i = 0; i < 11; i++) {
-        char thing = dest[i];
-        printf("%d\t%c\t%d\t%lu\n", i, thing, thing, sizeof dest);
-    }
+    // Getting char at index 9 still works but is undefined behavior, due to original array not being this big
+    printf("TEST: %c\n", dest[9]);
 }
 
