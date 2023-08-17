@@ -1,14 +1,9 @@
 #include <stdio.h>
 
-int *make_num() {
-    int num = 8;
-    return &num;
-}
-
 int main()
 {
-    int *num = make_num();
-
-    printf("number create non-locally is: %d", *num);
+    const char *string = "hi";
+    printf("memory address: %x\n", string);
+    printf("size of ref: %lu\n", sizeof(string));
 }
 
