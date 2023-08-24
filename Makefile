@@ -1,13 +1,10 @@
 CC=gcc
 CFLAGS=-Wwrite-strings
+MAKEFLAGS += --silent
 
 run: main.c
-	GREEN='\033[0;32m' && \
-	NC='\033[0m' && \
 	make build && \
-	printf "Running program --------------------------\n\n${GREEN}" && \
 	./bin/target && \
-	printf "\n${NC}End of program  --------------------------\n" && \
 	make clean
 
 build: main.c
@@ -16,3 +13,5 @@ build: main.c
 clean:
 	rm -fr ./bin
 
+help:
+	echo -e "make\n\trun\n\tbuild\n\tclean"
