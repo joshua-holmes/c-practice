@@ -2,8 +2,8 @@
 
 int main()
 {
-    const char *string = "hi";
-    printf("memory address: %x\n", string);
-    printf("size of ref: %lu\n", sizeof(string));
+    int num = 4;
+    printf("memory address: %p\n", &num);
+    printf("size of ref: %lu\n", sizeof(&num));
 }
 
