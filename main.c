@@ -1,9 +1,12 @@
 #include <stdio.h>
 
-int main()
+void someFunction(int arg)
 {
-    int num = 4;
-    printf("memory address: %p\n", &num);
-    printf("size of ref: %lu\n", sizeof(&num));
+    printf("Yay %d!\n", arg);
 }
 
+int main() {
+    void (*pf)(int);
+    pf = &someFunction;
+    pf(5);
+}
